@@ -65,11 +65,13 @@ export const Error = styled.span`
 export const Repositories = styled.div`
   margin-top: 80px;
   max-width: 700px;
+  flex-wrap: wrap;
+  display: flex;
 
   a {
     background: #fff;
     border-radius: 5px;
-    width: 100%;
+    width: 90%;
     padding: 24px;
     display: block;
     text-decoration: none;
@@ -78,12 +80,12 @@ export const Repositories = styled.div`
     align-items: center;
     transition: transform 0.2s;
 
+    margin-top: 16px;
     &:hover {
       transform: translateX(10px);
     }
 
     & + a {
-      margin-top: 16px;
     }
 
     img {
@@ -112,5 +114,23 @@ export const Repositories = styled.div`
       margin-left: auto;
       color: #cbcbd6;
     }
+  }
+`;
+
+export const CloseRepository = styled.div`
+  width: 10%;
+  display: block;
+  margin-top: 16px;
+
+  button {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border-radius: 0px 5px 5px 0px;
+    border: 0;
+  }
+
+  svg {
+    color: white;
   }
 `;

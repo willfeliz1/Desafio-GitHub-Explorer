@@ -1,10 +1,10 @@
 import React, { useState, useEffect, FormEvent } from 'react';
-import { FiChevronRight } from 'react-icons/fi';
+import { FiChevronRight, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/logo.svg';
 import api from '../../services/api';
 
-import { Title, Form, Repositories, Error } from './styles';
+import { Title, Form, Repositories, Error, CloseRepository } from './styles';
 
 interface Repository {
   full_name: string;
@@ -61,6 +61,12 @@ const Dashboard: React.FC = () => {
     }
   }
 
+  async function handleDeleteRepository(fullname: string): Promise<void> {
+    setRepositories(
+      repositories.filter((repository) => repository.full_name !== fullname),
+    );
+  }
+
   return (
     <>
       <img src={logoImg} alt="Github Explorer" />
@@ -79,21 +85,30 @@ const Dashboard: React.FC = () => {
 
       <Repositories>
         {repositories.map((repository) => (
-          <Link
-            key={repository.full_name}
-            to={`/repositories/${repository.full_name}`}
-          >
-            <img
-              src={repository.owner.avatar_url}
-              alt={repository.owner.login}
-            />
-            <div>
-              <strong>{repository.full_name}</strong>
-              <p>{repository.description}</p>
-            </div>
+          <>
+            <Link
+              key={repository.full_name}
+              to={`/repositories/${repository.full_name}`}
+            >
+              <img
+                src={repository.owner.avatar_url}
+                alt={repository.owner.login}
+              />
+              <div>
+                <strong>{repository.full_name}</strong>
+                <p>{repository.description}</p>
+              </div>
 
-            <FiChevronRight size={20} />
-          </Link>
+              <FiChevronRight size={20} />
+            </Link>
+            <CloseRepository
+              onClick={() => handleDeleteRepository(repository.full_name)}
+            >
+              <button type="submit">
+                <FiX size={20} />
+              </button>
+            </CloseRepository>
+          </>
         ))}
       </Repositories>
     </>
