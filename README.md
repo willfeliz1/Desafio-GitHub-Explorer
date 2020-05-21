@@ -2,7 +2,7 @@
 # <center> GitHub Explorer
 
 <h1 align="center">
-  <img src=https://media.giphy.com/media/Y1M0pRlTZsCbMoQ8f2/source.gif width="480" height="240">
+  <img src="https://media.giphy.com/media/Y1M0pRlTZsCbMoQ8f2/source.gif" width="480" height="240">
 </h1>
 
 
