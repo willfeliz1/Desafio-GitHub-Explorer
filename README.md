@@ -1,8 +1,8 @@
 
-# <center> GitHub Explorer
+<h1 align="center"> GitHub Explorer </h1>
 
 <h1 align="center">
-  <img src="https://media.giphy.com/media/Y1M0pRlTZsCbMoQ8f2/source.gif" width="480" height="240">
+  <img src="https://media1.giphy.com/media/IbaWVDKDza2xbTlWg1/giphy.gif">
 </h1>
 
 
