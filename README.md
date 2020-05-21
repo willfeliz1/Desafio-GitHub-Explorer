@@ -1,44 +1,77 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  Github Explorer
+</h1>
+<h1 align="center">
+  <img src="https://ik.imagekit.io/l4en7xyqq3/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f676f6c64656e2d77696e642f626f6f7463616d702d676f737461636b2f6865616465722d6465736166696f732e706e67_u7F4RKLkz.png">
+</h1>
 
-## Available Scripts
+![Http cat](<img src="https://media.giphy.com/media/d5fHnVhRAScptqbGtz/giphy.gif" width="40" height="40">)
 
-In the project directory, you can run:
 
-### `yarn start`
+## 📕 About
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The main objective of this challenge is to insert records to the database through file import.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## ⚡ Techs
 
-### `yarn test`
+* [Node.js] - evented I/O for the backend
+* [Express] - fast node.js network app framework
+* [Typescript] - typed superset of JavaScript that compiles to plain JavaScript.
+* [TypeORM] - an ORM that can run in Nodej, browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron platforms and can be used with TypeScript and JavaScript
+* [Yarn] - package manager that doubles down as project manager.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 💻 Instalation
 
-### `yarn build`
+### Docker
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+With docker hub installed, follow the commands:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```sh
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+$ docker run --name gostack_postgree -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgrees
 
-### `yarn eject`
+$ docker start gostack_postgree
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+### Start server
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install dependencies and start the server.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+$ yarn
+$ yarn dev:server
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## If you want to see the unit testing 😊
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+```sh
+
+$ yarn test
+
+```
+### what he expects
+
+```
+$ cross-env NODE_ENV=test jest
+ PASS  src/__tests__/Transaction.spec.ts
+  Transaction
+    📌 should be able to list transactions
+    📌 should be able to create new transaction
+    📌 should create tags when inserting new transactions
+    📌 should not create tags when they already exists
+    📌 should not be able to create outcome transaction without a valid balance
+    📌 should be able to delete a transaction
+    📌 should be able to import transactions
+
+```
+
+
+
+[node.js]: <http://nodejs.org>
+[express]: <http://expressjs.com>
+[typescript]: <https://www.typescriptlang.org/>
+[typeORM]: <https://typeorm.io/#/>
+[Yarn]: <https://yarnpkg.com/>
